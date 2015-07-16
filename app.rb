@@ -1,6 +1,6 @@
 class App
 
-  def brackets(arr)
+  def brackets(a,arr)
 
     res = {}
     arr.each {|key,value|
@@ -20,10 +20,12 @@ class App
 
       end
     }
+    if(a == 1)
+      puts res
+    end
 
-
-    if(res.has_value?(')') == nil or res.has_value?('(') == nil)
-        res = brackets(res)
+    if(res.has_value?('(') == true && res.has_value?(')') == true)
+        return brackets(1,res)
     else
       return res
     end
